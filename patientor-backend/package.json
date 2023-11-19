@@ -1,33 +1,36 @@
 {
-  "name": "patientor",
-  "version": "0.0.1",
-  "description": "3 patientor",
-  "main": "index.js",
-  "scripts": {
-    "tsc": "tsc",
-    "dev": "ts-node-dev index.ts",
-    "lint": "eslint --ext .ts .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ruiyotabby/patientor.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ruiyotabby/patientor/issues"
-  },
-  "homepage": "https://github.com/ruiyotabby/patientor#readme",
-  "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "@typescript-eslint/parser": "^6.11.0",
-    "eslint": "^8.54.0",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  }
+	"name": "patientor",
+	"version": "0.0.1",
+	"description": "patientor",
+	"main": "index.ts",
+	"scripts": {
+		"tsc": "tsc",
+		"dev": "ts-node-dev index.ts",
+		"lint": "eslint --ext .ts .",
+		"start": "node build/index",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ruiyotabby/patientor.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ruiyotabby/patientor/issues"
+	},
+	"homepage": "https://github.com/ruiyotabby/patientor#readme",
+	"devDependencies": {
+		"@types/cors": "^2.8.16",
+		"@types/express": "^4.17.21",
+		"@typescript-eslint/eslint-plugin": "^6.11.0",
+		"@typescript-eslint/parser": "^6.11.0",
+		"eslint": "^8.54.0",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^5.2.2"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"cors": "^2.8.5"
+	}
 }
