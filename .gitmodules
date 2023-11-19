@@ -1,0 +1,3 @@
+[submodule "patientor-frontend"]
+	path = patientor-frontend
+	url = https://github.com/ruiyotabby/patientor-frontend.git
