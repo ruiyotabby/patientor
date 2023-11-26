@@ -25,7 +25,18 @@ const addPatient = (entry: NewPatientEntry): PatientEntry => {
 	return newPatientEntry;
 };
 
+const getPatient = (id: string) => {
+	const foundPatient = patientsData.find((patient) => patient.id === id);
+	if (foundPatient) {
+		const { id, dateOfBirth, entries, gender, name, occupation } = foundPatient;
+		return { name, occupation, dateOfBirth, gender, entries, id };
+		// return foundPatient as NonSensitivePatientEntry;
+	}
+	throw new Error('Id does not match any patients');
+};
+
 export default {
 	getEntry,
 	addPatient,
+	getPatient,
 };
