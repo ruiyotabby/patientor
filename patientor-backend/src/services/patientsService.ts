@@ -7,13 +7,7 @@ import {
 } from '../types';
 
 const getEntry = (): NonSensitivePatientEntry[] => {
-	return patientsData.map(({ id, name, dateOfBirth, gender, occupation }) => ({
-		id,
-		name,
-		dateOfBirth,
-		gender,
-		occupation,
-	}));
+	return patientsData as NonSensitivePatientEntry[];
 };
 
 const addPatient = (entry: NewPatientEntry): PatientEntry => {
