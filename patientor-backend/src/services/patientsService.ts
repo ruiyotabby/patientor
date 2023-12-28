@@ -1,6 +1,7 @@
 import { v1 as uuid } from 'uuid';
 import patientsData from '../../data/patients';
 import {
+	EntryWithoutId,
 	NewPatientEntry,
 	NonSensitivePatientEntry,
 	PatientEntry,
@@ -24,7 +25,19 @@ const getPatient = (id: string) => {
 	if (foundPatient) {
 		const { id, dateOfBirth, entries, gender, name, occupation } = foundPatient;
 		return { name, occupation, dateOfBirth, gender, entries, id };
-		// return foundPatient as NonSensitivePatientEntry;
+	}
+	throw new Error('Id does not match any patients');
+};
+
+const addEntry = (id: string, entry: EntryWithoutId) => {
+	const patient = patientsData.find((patient) => patient.id === id);
+	if (patient) {
+		const newEntry = {
+			id: uuid(),
+			...entry,
+		};
+		patient.entries = patient.entries?.concat(newEntry);
+		return patient;
 	}
 	throw new Error('Id does not match any patients');
 };
@@ -33,4 +46,5 @@ export default {
 	getEntry,
 	addPatient,
 	getPatient,
+	addEntry,
 };
